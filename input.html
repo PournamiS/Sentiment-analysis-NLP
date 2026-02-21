@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Review | Sentiment AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='inputstyle.css') }}">
+</head>
+<body>
+
+    <div class="emoji-bg">
+        <span>😊</span><span>☹️</span><span>😍</span><span>😡</span><span>🤔</span>
+        <span>😐</span><span>😴</span><span>😎</span><span>😭</span><span>🤩</span>
+        <span>😊</span><span>☹️</span><span>😍</span><span>😡</span><span>🤔</span>
+        <span>😐</span><span>😴</span><span>😎</span><span>😭</span><span>🤩</span>
+    </div>
+
+    <div class="main-wrapper">
+    <div class="input-card">
+        <h2>Review Analysis</h2>
+        
+        <form action="/analyze" method="POST" class="analysis-form">
+            <textarea name="review" placeholder="Enter social media text here..." required></textarea>
+            <p class="sub-text">let's see if it's negative or positive</p>
+            <button type="submit" class="analyze-btn">Start Analysis</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result-badge {{ prediction }}">
+                <h3>Prediction: <span>{{ prediction }}</span></h3>
+            </div>
+        {% endif %}
+
+         <div class="back-container">
+    <a href="/" class="creative-back-btn">
+        <span class="arrow">←</span>
+        <span class="text">Go Back</span>
+    </a>
+         </div>
+    </div>
+    </div>
+</body>
+</html>

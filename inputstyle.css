@@ -1,0 +1,141 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #fdc791 0%, #fd92c9 100%);
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --text-color: #444;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--primary-gradient);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Faded Emoji Background */
+.emoji-bg {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0.50; /* Makes them faded */
+    font-size: 3rem;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Input Card */
+.input-container {
+    z-index: 10;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Updated Input Card: Wider footprint for a webpage feel */
+.input-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 50px; /* Increased padding for breathing room */
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    
+    /* Perfect Webpage Width */
+    width: 90%;
+    max-width: 750px; 
+}
+
+/* Updated Textarea: Short length, full width bar style */
+textarea {
+    width: 100%;
+    height: 100px; /* Reduced length for that sleek, wide look */
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    font-family: inherit;
+    font-size: 1.1rem;
+    color: #333;
+    resize: none;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+textarea:focus {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 15px rgba(253, 146, 201, 0.2);
+}
+
+/* Button Width Adjustment for Visual Balance */
+.analyze-btn {
+    align-self: center; /* Center the button within the wide card */
+    width: 100%;
+    max-width: 300px;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    background: #fff;
+    color: #fd92c9;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.back-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.creative-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.creative-back-btn .arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.creative-back-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #fd92c9; /* Matches your theme pink */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.creative-back-btn:hover .arrow {
+    transform: translateX(-5px); /* Arrow moves left on hover */
+}
+
+/* Active/Click Effect */
+.creative-back-btn:active {
+    transform: scale(0.95);
+}
